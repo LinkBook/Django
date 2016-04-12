@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>wp2</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/style.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- *********************************************** -->
+<!-- Start  Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <!-- Menu Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+
+
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+
+
+            <li class="sidebar-brand">
+                <a href="#top" onclick=$("#menu-close").click();> </a>
+            </li>
+
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo"> کسب و کارهای آنلاین <i
+                        class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo" class="collapse">
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> خودرو </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> مسکن و املاک</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> خرید گروهی </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> تبلیغات آنلاین </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> فروشگاه های آنلاین </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> اپ استور و مارکت ها </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> فروشگاه های اختصاصی </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> هتل داری و رزرواسیون </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> نیازمندی های تخصصی </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> نیازمندی های عمومی</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demoo"> اطلاع رسانی و محتوا <i
+                        class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demoo" class="collapse">
+
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>سبک زندگی</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> انجمن ها</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> محیط زیست</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> عکاسی</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> علم و دانش</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> فرهنگ و هنر</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> خانواده و کودک</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> دین و معارف </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> چندرسانه ای بر خط </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> سینما و تئاتر</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> شبکه های اجتماعی </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> مرجع کسب و کارها</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> گردشگری و سفر</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> ورزش، بهداشت و سلامت</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> کامپیوتر و فناوری اطلاعات</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>سایت های خبری و خبرگزاری ها</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> سایت های شهری و محله ای </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo4"> شخصی و شرکتی <i
+                        class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo4" class="collapse">
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> بانک و بیمه </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>صنایع سنگین</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>صنایع غذایی</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>موسسات آموزشی </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>وب سایت های شخصی </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>صنایع دارویی و بهداشتی</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>شرکت های طراحی سایت</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>شرکت های بورس و فرابورس </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>سازمان های دولتی و عمومی</a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();>تامین کنندگان اینترنت و زیرساخت </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo2"> خدمات آنلاین <i
+                        class="fa fa-fw fa-caret-down"></i> </a>
+                <ul id="demo2" class="collapse">
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> آموزش آنلاین </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> بازی های آنلاین </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> پرداخت آنلاین </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> خبرخوان های آنلاین </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> سرویس های وبلاگ</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> تغذیه و رستوران ها </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> تغذیه و رستوران ها</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=$("#menu-close").click();> سرویس نرم افزاری آنلاین </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            </li>
+
+
+        </ul>
+
+
+    </nav>
+
+    <!-- END Menu Navigation -->
+
+
+    <!-- start acount -->
+    <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown"><a href="#" class="dropdown-toggle pull-left toggle" data-toggle="dropdown">حساب کاربری
+            <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <div class="navbar-content">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img src="../static/img/120x120.png"
+                                     alt="Alternate Text" class="img-responsive"/>
+                                <p class="text-center small">
+                                    <a href="#"> تغییر عکس </a></p>
+                            </div>
+                            <div class="col-md-7">
+                                <span>نام کاربری</span>
+                                <p class="text-muted small">
+                                    mail@gmail.com</p>
+                                <div class="divider">
+                                </div>
+                                <a href="#" class="btn btn-primary btn-sm active">مشاهده پروفایل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-footer">
+                        <div class="navbar-footer-content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#" class="btn btn-default btn-sm">تغییر گذرواژه</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="about" class="btn btn-default btn-sm pull-right">خروج</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            </div>
+        </li>
+    </ul>
+
+
+    <!-- ENd acount -->
+
+    <div class="container">
+
+        <!-- Menu -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index">Link Book</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a href="index">صفحه اصلی</a>
+                </li>
+
+
+                <li>
+                    <a href="all-Category"> دسه بندی ها </a>
+                </li>
+
+                <li>
+                    <a href="#search">جستجو</a>
+                </li>
+
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#Register-modal"> ثبت وب سایت </a>
+                </li>
+
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#login-modal">ورود</a>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+        <!-- /.navbar-collapse -->
+
+
+    </div>
+    <!-- /.container -->
+
+</nav>
+<!-- /END of all Nav -->
+
+<!-- *********************************************** -->
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">عنوان کلی وب سایت موردنظر
+                <small>زیردسته</small>
+            </h1>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+    <br>
+
+
+    <!-- start -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <!-- begin panel group -->
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+                <!-- panel 1 -->
+                <div class="panel panel-default">
+
+                    <!--wrap panel heading in span to trigger image change as well as collapse -->
+                    <span class="side-tab" data-target="#tab1" data-toggle="tab" role="tab" aria-expanded="false">
+                        <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
+                             data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                             aria-controls="collapseOne">
+
+                            <h4 class="panel-title">چشم انداز</h4>
+                        </div>
+                    </span>
+
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <!-- Tab content goes here -->
+                            .....
+                        </div>
+                    </div>
+                </div>
+                <!-- / panel 1 -->
+
+
+                <!-- panel 2 -->
+                <div class="panel panel-default">
+                    <!--wrap panel heading in span to trigger image change as well as collapse -->
+                    <span class="side-tab" data-target="#tab2" data-toggle="tab" role="tab" aria-expanded="false">
+                        <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse"
+                             data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                             aria-controls="collapseTwo">
+                            <h4 class="panel-title collapsed">ماموریت</h4>
+                        </div>
+                    </span>
+
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <!-- Tab content goes here -->
+                            ....
+                        </div>
+                    </div>
+                </div>
+                <!-- / panel 2 -->
+
+
+                <!--  panel 3 -->
+                <div class="panel panel-default">
+                    <!--wrap panel heading in span to trigger image change as well as collapse -->
+                    <span class="side-tab" data-target="#tab3" data-toggle="tab" role="tab" aria-expanded="false">
+                        <div class="panel-heading" role="tab" id="headingThree" class="collapsed" data-toggle="collapse"
+                             data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                             aria-controls="collapseThree">
+                            <h4 class="panel-title">محصولات/ خدمات </h4>
+                        </div>
+                    </span>
+
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                         aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <!-- tab content goes here -->
+                            ....
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- / panel-group -->
+            <a class="btn btn-md btn-primary btn-block" href="#">مشاهد وب سایت</a> <br><br>
+
+
+            <!-- Side Widget Well -->
+            <div class="well">
+                <h4>عضویت در خبرنامه</h4>
+                <p> با وارد کردن ایمیل خود میتوانید از همینجابه صورت مستقیم در خبرنامه این وب اسیت عضو شوید </p>
+                <form method="post">
+                    <div class="form-group">
+                        <input type="email" name="userEmail" class="form-control" id="" placeholder="ایمیل">
+                        <button type="submit" class="btn btn-primary">عضویت</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Blog Categories Well -->
+            <div class="well">
+                <h4>برچسب های وب سایت</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#"></a>
+                            </li>
+                            <li><a href="#">برچسب</a>
+                            </li>
+                            <li><a href="#">برچسب</a>
+                            </li>
+                            <li><a href="#">برچسب</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">برچسب</a>
+                            </li>
+                            <li><a href="#">برچسب</a>
+                            </li>
+                            <li><a href="#">برچسب</a>
+                            </li>
+                            <li><a href="#">برچسب</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div> <!-- /col-md-4 -->
+
+
+        <!-- start col-md-8 -->
+
+        <div class="col-lg-8">
+            <img class="img-responsive" src="../static/img/wp1.png" alt="">
+
+        </div>
+
+
+        <!-- Festival -->
+
+        <div class="col-lg-8">
+            <h2 class="page-header">افتخارات و عناوین</h2>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="../static/img/Festival.png" alt="">
+                <div class="caption">
+                    <h3>عنوان جشنواره<br>
+                        <small>
+                            <time datetime="2014-01-20">January 20th, 2014</time>
+                        </small>
+                    </h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
+                        maxime.</p>
+                    <a class="btn btn-md btn-primary btn-block" href="#"> مشاهده جشنواره </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="../static/img/Festival.png" alt="">
+                <div class="caption">
+                    <h3>عنوان جشنواره<br>
+                        <small>
+                            <time datetime="2014-01-20">January 20th, 2014</time>
+                        </small>
+                    </h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
+                        maxime.</p>
+                    <a class="btn btn-md btn-primary btn-block" href="#"> مشاهده جشنواره </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- END Festival -->
+
+
+    </div>  <!-- /end row -->
+
+
+    <!-- Related Websites -->
+    <div class="row">
+
+        <div class="col-lg-12 ">
+            <h3 class="page-header">وب سایت های مشابه :</h3>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <a href="#">
+                <img class="img-responsive img-hover img-related" src="../static/img/relatedWeb.png" alt="">
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <a href="#">
+                <img class="img-responsive img-hover img-related" src="../static/img/relatedWeb.png" alt="">
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <a href="#">
+                <img class="img-responsive img-hover img-related" src="../static/img/relatedWeb.png" alt="">
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <a href="#">
+                <img class="img-responsive img-hover img-related" src="../static/img/relatedWeb.png" alt="">
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <a href="#">
+                <img class="img-responsive img-hover img-related" src="../static/img/relatedWeb.png" alt="">
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <a href="#">
+                <img class="img-responsive img-hover img-related" src="../static/img/relatedWeb.png" alt="">
+            </a>
+        </div>
+
+    </div>
+    <!-- End Related Websites -->
+
+
+    <hr>
+
+
+    <!-- ******************************************************* -->
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
+                <h1> ثبت نام </h1><br>
+                <form action="" method="">
+                    <input type="text" name="name" placeholder="نام">
+                    <input type="text" name="username" placeholder="نام کاربری">
+                    <input type="email" name="user" placeholder="ایمیل" required>
+                    <input type="password" name="pass" placeholder="پسورد">
+                    <input type="password" name="pass" placeholder="تکرار پسورد">
+                    <input type="submit" name="login" class="login loginmodal-submit" value=" ثبت نام ">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END Register Modal -->
+
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
+                <h1> ورود به حساب کاربری</h1><br>
+                <form action="" method="">
+                    <input type="text" name="user" placeholder="نام کاربری">
+                    <input type="password" name="pass" placeholder="پسورد">
+                    <input type="submit" name="login" class="login loginmodal-submit" value="ورود">
+                </form>
+
+                <div class="login-help">
+                    <a href="#">فراموش کردن رمز عبور</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Login Modal -->
+
+
+    <hr>
+
+
+    <!-- Footer -->
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4  col-md-4 col-sm-12">
+                    <div class="footer_dv">
+                        <h4>لینک بوک</h4>
+                        <ul>
+                            <li class="line_rv"><a href="index"> صفحه اصلی </a></li>
+                            <li><a href="about"> درباره ما </a></li>
+                            <li><a href="Vision"> چشم انداز </a></li>
+                            <li><a href="contact"> ارتباط با ما </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4  col-md-4 col-sm-12">
+                    <div class="footer_dv">
+                        <h4>دیگر قسمت ها</h4>
+                        <ul>
+
+                            <li><a href="siteMap"> نقشه سایت</a></li>
+                            <li><a href="Questions"> سوالات متداول </a></li>
+                            <li><a href="index"> راهنما </a></li>
+                            <li><a href="index"> قوانین </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4  col-md-4 col-sm-12">
+                    <div class="footer_dv">
+                        <h4>دسته بندی ها</h4>
+                        <ul>
+                            <li><a href="showWebsites"> کسب و کارهای آنلاین </a></li>
+                            <li><a href="showWebsites"> اطلاع رسانی و محتوا</a></li>
+                            <li><a href="showWebsites"> خدمات آنلاین </a></li>
+                            <li><a href="showWebsites"> شخصی و شرکتی </a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- END Footer -->
+
+
+</div>
+<!-- /.container -->
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div id="search">
+            <form>
+                <input type="search" value="" placeholder="جستجوی وب سایت "/>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="../static/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/script.js"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+
+</body>
+
+</html>

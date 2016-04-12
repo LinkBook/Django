@@ -1,0 +1,835 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% block title %}
+        <title> خانه </title>
+    {% endblock %}
+    <!-- Bootstrap Core CSS -->
+    {% bootstrap_css %}
+    {#        <link href=" {% static 'css/bootstrap.css' %}" rel="stylesheet">#}
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+{% block Navigation %}
+    <!-- *********************************************** -->
+    <!-- Start  Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Menu Navigation -->
+        <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+
+
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i
+                        class="fa fa-times"></i></a>
+
+
+                <li class="sidebar-brand">
+                    <a href="#top" onclick=$("#menu-close").click();> </a>
+                </li>
+
+
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"> کسب و کارهای آنلاین <i
+                            class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo" class="collapse">
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> خودرو </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> مسکن و املاک</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> خرید گروهی </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> تبلیغات آنلاین </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> فروشگاه های آنلاین </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> اپ استور و مارکت ها </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> فروشگاه های اختصاصی </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> هتل داری و رزرواسیون </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> نیازمندی های تخصصی </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> نیازمندی های عمومی</a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demoo"> اطلاع رسانی و محتوا <i
+                            class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demoo" class="collapse">
+
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>سبک زندگی</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> انجمن ها</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> محیط زیست</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> عکاسی</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> علم و دانش</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> فرهنگ و هنر</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> خانواده و کودک</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> دین و معارف </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> چندرسانه ای بر خط </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> سینما و تئاتر</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> شبکه های اجتماعی </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> مرجع کسب و کارها</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> گردشگری و سفر</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> ورزش، بهداشت و سلامت</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> کامپیوتر و فناوری اطلاعات</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>سایت های خبری و خبرگزاری ها</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> سایت های شهری و محله ای </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo4"> شخصی و شرکتی <i
+                            class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo4" class="collapse">
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> بانک و بیمه </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>صنایع سنگین</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>صنایع غذایی</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>موسسات آموزشی </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>وب سایت های شخصی </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>صنایع دارویی و بهداشتی</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>شرکت های طراحی سایت</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>شرکت های بورس و فرابورس </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>سازمان های دولتی و عمومی</a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();>تامین کنندگان اینترنت و زیرساخت </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo2"> خدمات آنلاین <i
+                            class="fa fa-fw fa-caret-down"></i> </a>
+                    <ul id="demo2" class="collapse">
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> آموزش آنلاین </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> بازی های آنلاین </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> پرداخت آنلاین </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> خبرخوان های آنلاین </a>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> سرویس های وبلاگ</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> تغذیه و رستوران ها </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> تغذیه و رستوران ها</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick=$("#menu-close").click();> سرویس نرم افزاری آنلاین </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+
+        <!-- END Menu Navigation -->
+
+        {% block acount %}
+            <!-- start acount -->
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown"><a href="#" class="dropdown-toggle pull-left toggle" data-toggle="dropdown">حساب
+                    کاربری
+                    <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-content">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="{% static 'img/120x120.png' %}"
+                                             alt="Alternate Text" class="img-responsive"/>
+                                        <p class="text-center small">
+                                            <a href="#"> تغییر عکس </a></p>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <span>نام کاربری</span>
+                                        <p class="text-muted small">
+                                            mail@gmail.com</p>
+                                        <div class="divider">
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm active">مشاهده پروفایل</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navbar-footer">
+                                <div class="navbar-footer-content">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#" class="btn btn-default btn-sm">تغییر گذرواژه</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="about" class="btn btn-default btn-sm pull-right">خروج</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    </div>
+                </li>
+            </ul>
+            <!-- ENd acount -->
+        {% endblock %}
+        <div class="container">
+
+            <!-- Menu -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index">Link Book</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <a href="index">صفحه اصلی</a>
+                    </li>
+
+
+                    <li>
+                        <a href="all-Category"> دسه بندی ها </a>
+                    </li>
+
+                    <li>
+                        <a href="#search">جستجو</a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#Register-modal"> ثبت وب سایت </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">ورود</a>
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+            <!-- /.navbar-collapse -->
+
+
+        </div>
+        <!-- /.container -->
+
+    </nav>
+    <!-- /END of all Nav -->
+    <!-- *********************************************** -->
+{% endblock %}
+
+
+{% block Carousel %}
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        {% block Indicators %}
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+        {% endblock %}
+        {% block WrapperSlide %}
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="fill" style="background-image:url('{% static 'img/slider2.png' %}');"></div>
+                    <div class="carousel-caption">
+                        <h2> دنیای اینترنت را یک جا در اختیار داشته باشید </h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fill" style="background-image:url('{% static 'img/slider1.png' %}');"></div>
+                    <div class="carousel-caption">
+                        <h2>مجموعه کامل از وب سایت های فارسی زبان</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fill" style="background-image:url('{% static 'img/slider3.png' %}');"></div>
+                    <div class="carousel-caption">
+                        <h2> Caption 3 </h2>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+        <!-- Controls -->
+    </header>
+    <!-- End Carousel -->
+{% endblock %}
+
+
+{% block container %}
+    <!-- Page Content -->
+    <div class="container">
+        {% block Content %}
+            <!-- Page Heading/Breadcrumbs -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"></h1>
+
+                    <ol class="breadcrumb">
+                        <li><a href="showWebsites"> کسب و کارهای آنلاین</a>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+            <!-- /.row -->
+
+
+
+            <!-- Websites Row 1 -->
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="Websitepage1">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="Websitepage1">1</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="Websitepage2">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="Websitepage2">2</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="Websitepage3">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="Websitepage3">3</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
+                             alt="Bootstrap Image Preview">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+            </div>
+
+            <!-- /. end row 1 -->
+
+
+            <br>
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <ol class="breadcrumb">
+                        <li><a href="showWebsites">خدمات آنلاین </a>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+
+
+
+
+            <!-- Websites Row 2 -->
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
+                             alt="Bootstrap Image Preview">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+            </div>
+            <!-- /. end row 2 -->
+
+
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <ol class="breadcrumb">
+                        <li><a href="showWebsites"> اطلاع رسانی و محتوا </a>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+
+
+            <!-- Websites Row 3 -->
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
+                             alt="Bootstrap Image Preview">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+            </div>
+
+            <!-- /. end row 3 -->
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <ol class="breadcrumb">
+                        <li><a href="showWebsites"> شخصی و شرکتی </a>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+
+
+
+
+            <!-- Websites Row 4 -->
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
+                    <a href="../Webpage">
+                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
+                             alt="Bootstrap Image Preview">
+                    </a>
+                    <h4>
+                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
+                    </h4>
+                </div>
+
+            </div>
+
+            <!-- /. end row 4 -->
+        {% endblock %}
+
+
+
+
+
+        <!-- ******************************************************* -->
+
+        {% block Register %}
+            <!-- Register Modal -->
+            <div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="loginmodal-container">
+                        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
+                        <h1> ثبت نام </h1><br>
+                        {#                        <form action="/index" method="post" class="form">#}
+                        {#                            {% csrf_token %}#}
+                        {#                            {% bootstrap_form form %}#}
+                        {#                            {% buttons %}#}
+                        {#                                <button type="submit" class="btn btn-primary">#}
+                        {#                                    {% bootstrap_icon "start" %} Submit#}
+                        {#                                </button>#}
+                        {#                            {% endbuttons %}#}
+                        {#                        </form>#}
+                        <form action="/index" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            {#                            <input type="text" name="name" placeholder="نام">#}
+                            {#                            <input type="text" name="username" placeholder="نام کاربری">#}
+                            {#                            <input type="email" name="email" placeholder="ایمیل" required>#}
+                            {#                            <input type="password" name="password" placeholder="پسورد">#}
+                            {#                            <input type="password" name="repassword" placeholder="تکرار پسورد">#}
+                            <input type="submit" name="Register" class="login loginmodal-submit" value=" ثبت نام ">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END Register Modal -->
+        {% endblock %}
+
+        {% block Login %}
+            <!-- Login Modal -->
+            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="loginmodal-container">
+                        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
+                        <h1> ورود به حساب کاربری</h1><br>
+                        <form action="" method="post">
+                            <input type="text" name="user" placeholder="نام کاربری">
+                            <input type="password" name="password" placeholder="پسورد">
+                            <input type="submit" name="login" class="login loginmodal-submit" value="ورود">
+                        </form>
+
+                        <div class="login-help">
+                            <a href="#">فراموش کردن رمز عبور</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END Login Modal -->
+        {% endblock %}
+
+        <hr>
+
+
+
+        {% block Footer %}
+            <!-- Footer -->
+
+            <section class="footer">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4  col-md-4 col-sm-12">
+                            <div class="footer_dv">
+                                <h4>لینک بوک</h4>
+                                <ul>
+                                    <li class="line_rv"><a href="index"> صفحه اصلی </a></li>
+                                    <li><a href="about"> درباره ما </a></li>
+                                    <li><a href="Vision"> چشم انداز </a></li>
+                                    <li><a href="contact"> ارتباط با ما </a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4  col-md-4 col-sm-12">
+                            <div class="footer_dv">
+                                <h4>دیگر قسمت ها</h4>
+                                <ul>
+
+                                    <li><a href="siteMap"> نقشه سایت</a></li>
+                                    <li><a href="Questions"> سوالات متداول </a></li>
+                                    <li><a href="index"> راهنما </a></li>
+                                    <li><a href="index"> قوانین </a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4  col-md-4 col-sm-12">
+                            <div class="footer_dv">
+                                <h4>دسته بندی ها</h4>
+                                <ul>
+                                    <li><a href="showWebsites"> کسب و کارهای آنلاین </a></li>
+                                    <li><a href="showWebsites"> اطلاع رسانی و محتوا</a></li>
+                                    <li><a href="showWebsites"> خدمات آنلاین </a></li>
+                                    <li><a href="showWebsites"> شخصی و شرکتی </a></li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- END Footer -->
+        {% endblock %}
+
+
+    </div>
+{% endblock %}
+{% block Search %}
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div id="search">
+                <form action="#">
+                    <input type="search" value="" placeholder="جستجوی وب سایت "/>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+<!-- jQuery -->
+<script src="{% static 'js/jquery.js' %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+{#<script src="{% static 'js/bootstrap.min.js' %}"></script>#}
+{% bootstrap_javascript %}
+<script src=" {% static 'js/scripts.js' %}"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+</body>
+
+</html>
+{#{% load bootstrap3 %}#}
+{#{% bootstrap_css %}#}
+{#{% bootstrap_javascript %}#}
+{#{% bootstrap_messages %}#}
+{# Display a form #}
+{#<form action="/index" method="post" class="form">#}
+{#  {% csrf_token %}#}
+{#  {% bootstrap_form form %}#}
+{#  {% buttons %}#}
+{#    <button type="submit" class="btn btn-primary">#}
+{#      {% bootstrap_icon "star" %} Submit#}
+{#    </button>#}
+{#  {% endbuttons %}#}
+{#</form>#}

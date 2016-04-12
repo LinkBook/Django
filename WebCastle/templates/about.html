@@ -1,0 +1,99 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block title %}
+    <title> درباره ما</title>
+{% endblock %}
+{% block Content %}
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                درباره ما
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+                یک توضیح کوتاه
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                تیم ما
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+
+        <div class="col-lg-2 col-md-2 col-sm-4">
+            <img class="img-circle img-responsive img-center" src="{% static 'img/user.png' %}" alt="">
+            <h4>حدیث سپهوند</h4><br>
+            <p>مدیر پروژه <br>
+                برنامه نویس وب </p>
+        </div>
+
+
+        <div class="col-lg-2 col-md-2 col-sm-4">
+            <img class="img-circle img-responsive img-center" src="{% static 'img/user.png' %}" alt="">
+            <h4>رسول کرمی</h4><br>
+            <p> طراح وب <br>
+                طراحی بانک اطلاعاتی </p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4">
+            <img class="img-circle img-responsive img-center" src="{% static 'img/user.png' %}" alt="">
+            <h4>نگار بهاروند</h4><br>
+            <p>برنامه نویس وب <br>
+                طراح بانک اطلاعاتی</p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4">
+            <img class="img-circle img-responsive img-center" src="{% static 'img/user.png' %}" alt="">
+            <h4>هدیه مهاجر</h4><br>
+            <p>برنامه نویس وب <br>
+                طراح بانک اطلاعاتی</p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4">
+            <img class="img-circle img-responsive img-center" src="{% static 'img/Hamze.jpg' %}" alt="">
+            <h4>
+                حمزه زارع نصیری </h4><br>
+
+            <p>مدیر فنی <br>
+                برنامه نویس وب</p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4">
+            <img class="img-circle img-responsive img-center" src="{% static 'img/user.png' %}" alt="">
+            <h2>+ شما</h2><br>
+            <p>ملحق شدن به تیم ما</p>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+{% block Register %}
+    <!-- Register Modal -->
+    <div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
+                <h1> ثبت نام </h1><br>
+                <form action="/index" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" name="Register" class="login loginmodal-submit" value=" ثبت نام ">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END Register Modal -->
+{% endblock %}
