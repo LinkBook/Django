@@ -11,10 +11,7 @@ from . import forms
 class Index(FormView):
     template_name = 'index.html'
     form_class = forms.RegisterForm
-    success_url = '/about'
-
-    def post(self, request, *args, **kwargs):
-        return render(request, "about.html")
+    success_url = '/admin'
 
 
 class Categorys(TemplateView):

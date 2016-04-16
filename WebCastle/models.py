@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.models import User
 from django.db.models import *
 
@@ -47,7 +49,7 @@ class Subscribe(Model):
 class Comments(Model):
     comment_name = CharField(max_length=30)
     comment_email = EmailField(null=False)
-    # date_send = DateTimeField(default=datetime.datetime.now(), blank=True)
+    date_send = DateTimeField(default=datetime.datetime.now(), blank=True)
     comment = TextField(null=False)
 
     def __unicode__(self):
@@ -67,3 +69,9 @@ class contact(Model):
 
     def __unicode__(self):
         return self.message
+
+# class Reg(Model):
+#     username = CharField(max_length=30)
+#     email = EmailField(null=False)
+#     password = CharField(null=False, max_length=300)
+#     repassword = CharField(null=False, max_length=300)

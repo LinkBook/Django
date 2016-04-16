@@ -1,8 +1,10 @@
 from django.conf.urls import url
+from django.contrib import admin
 
 from .views import *
 
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
     url(r'^$', Index.as_view(), name='Home'),
     url(r'^index$', Index.as_view()),
     url(r'^all-Category$', Categorys.as_view(), name='all-Category'),

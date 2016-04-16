@@ -27,7 +27,6 @@ urlpatterns = [
     url(r'^siteMap$', SiteMap.as_view(), name='siteMap'),
     url(r'^Questions$', Questions.as_view(), name='Questions'),
     url(r'^showWebsites$', ShowWebsites.as_view(), name='showWebsites'),
-
     url(r'^contact$', Contact.as_view(), name='contact'),
     url(r'^Vision$', Vision.as_view(), name='Vision'),
     url(r'^about$', About.as_view(), name='about'),

@@ -1,16 +1,15 @@
 from django import forms
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
 
 
-class RegisterForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email']
+# User = Reg()
 
-    user = forms.CharField(label='', max_length=100, help_text='',
-                           widget=forms.TextInput(attrs={'placeholder': 'نام'}))
+
+# class RegisterForm(forms.ModelForm):
+class RegisterForm(forms.Form):
+    # class Meta:
+    #     model = User
+    #     fields = ['username', 'email', 'password', 'repassword']
+
     username = forms.CharField(label='', required=True, max_length=100, help_text='',
                                widget=forms.TextInput(attrs={'placeholder': 'نام کاربری'}))
     email = forms.CharField(label='', required=True, max_length=100, help_text='',
