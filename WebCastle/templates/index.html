@@ -686,8 +686,16 @@
                         {#                            {% endbuttons %}#}
                         {#                        </form>#}
                         <form action="/admin" method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
+                            <div id="complexify">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <div class="progress">
+                                    <div id="complexity-bar" class="progress-bar" role="progressbar">
+                                    </div>
+                                </div>
+                            </div>
+                            {#                                <label for="password">Password</label>#}
+                            {#                                <input type="password" class="form-control" id="password">#}
                             {#                            <input type="text" name="name" placeholder="نام">#}
                             {#                            <input type="text" name="username" placeholder="نام کاربری">#}
                             {#                            <input type="email" name="email" placeholder="ایمیل" required>#}
@@ -809,6 +817,9 @@
 <!-- jQuery -->
 <script src="{% static 'js/jquery.js' %}"></script>
 <script src="{% static 'js/passtest.js' %}"></script>
+<script src="{% static 'js/jquery.complexify.js' %}"></script>
+<script src="{% static 'js/jquery.complexify.min.js' %}"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 {#<script src="{% static 'js/bootstrap.min.js' %}"></script>#}

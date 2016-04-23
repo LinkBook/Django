@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="538798610">
+  <component name="DataSourceManagerImpl" format="xml" hash="3134536347">
     <data-source source="LOCAL" name="Django default" uuid="17e75da7-1ca1-4c6c-91a7-dfad438bc8ef">
-      <driver-ref>sqlite.xerial</driver-ref>
+      <driver-ref>c3bb10e1-c9c0-48ba-9016-87408f306f8e</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/LinkBook/settings.py</remarks>
@@ -11,6 +11,20 @@
       <explain-plan-config>
         <provider>com.intellij.database.plan.ExplainPlanProvider.NullExplainPlanProvider</provider>
       </explain-plan-config>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/postgresql-driver-license.txt</url>
+        </library>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/postgresql-9.4-1201.jdbc4.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - template1@localhost" uuid="87116ff5-9ba6-4663-90aa-09b9f8cfc365">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/template1</jdbc-url>
     </data-source>
   </component>
 </project>
