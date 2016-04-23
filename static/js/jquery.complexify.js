@@ -204,7 +204,7 @@ COMPLEXIFY_BANLIST = '000000|111111|11111111|112233|121212|123123|123456|1234567
         progressBar.toggleClass('progress-bar-danger', !valid);
         progressBar.css({'width': complexity + '%'});
 
-        $('#complexify').text(Math.round(complexity) + '%');
+        $('#complexify #complexity').text(Math.round(complexity) + '%');
     });
 
 })(jQuery);
