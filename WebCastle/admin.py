@@ -9,5 +9,4 @@ admin.site.register(model.SubCategory)
 admin.site.register(model.Festival)
 admin.site.register(model.Tag)
 admin.site.register(model.Subscribe)
-
 admin.site.site_header = ' لینک بوک '

@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from django.views.generic.edit import FormView
 
 from . import forms
@@ -14,7 +14,7 @@ class Index(FormView):
     success_url = '/admin'
 
 
-class Categorys(TemplateView):
+class Categorys(View):
     def get(self, request, *args, **kwargs):
         return render(request, "all-Category.html")
 
@@ -40,10 +40,8 @@ class ShowWebsites(TemplateView):
         try:
             show_webs = paginator.page(page)
         except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
             show_webs = paginator.page(1)
         except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
             show_webs = paginator.page(paginator.num_pages)
         context['webs'] = show_webs
         return context

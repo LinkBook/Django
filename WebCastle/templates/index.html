@@ -692,8 +692,10 @@
                             {#                            <input type="text" name="username" placeholder="نام کاربری">#}
                             {#                            <input type="email" name="email" placeholder="ایمیل" required>#}
                             {#                            <input type="password" name="password" placeholder="پسورد">#}
-                            {#                            <input type="password" name="repassword" placeholder="تکرار پسورد">#}
-                            <input type="submit" name="Register" class="login loginmodal-submit" value=" ثبت نام ">
+                            {#                            <input type="password" id="id_repassword" placeholder="تکرار پسورد" onkeyup="checkPass(); return false;" required>#}
+                            <span id="confirmMessage"></span>
+                            <input type="submit" name="Register" onclick="return Validate()"
+                                   class="login loginmodal-submit" value=" ثبت نام ">
                         </form>
 
                     </div>
@@ -806,6 +808,7 @@
 {% endblock %}
 <!-- jQuery -->
 <script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/passtest.js' %}"></script>
 
 <!-- Bootstrap Core JavaScript -->
 {#<script src="{% static 'js/bootstrap.min.js' %}"></script>#}
