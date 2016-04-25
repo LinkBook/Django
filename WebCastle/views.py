@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
@@ -14,9 +14,11 @@ class Index(FormView):
     success_url = '/admin'
 
 
-class Categorys(TemplateView):
-    def get(self, request, *args, **kwargs):
-        return render(request, "all-Category.html")
+class Categorys(FormView):
+    form_class = forms.RegisterForm
+    template_name = 'all-Category.html'
+    # def get(self, request, *args, **kwargs):
+    #     return render(request, "all-Category.html")
 
 
 class SiteMap(TemplateView):
@@ -27,7 +29,8 @@ class Questions(TemplateView):
     template_name = 'Questions.html'
 
 
-class ShowWebsites(TemplateView):
+class ShowWebsites(FormView):
+    form_class = forms.RegisterForm
     template_name = 'showwebsites.html'
 
     def get_context_data(self, **kwargs):
@@ -57,9 +60,9 @@ class Vision(TemplateView):
     template_name = 'Vision.html'
 
 
-class About(TemplateView):
+class About(FormView):
     template_name = 'about.html'
-
+    form_class = forms.RegisterForm
 
 class Websitepage1(TemplateView):
     template_name = 'websitepage1.html'
