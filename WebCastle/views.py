@@ -1,6 +1,5 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render
-from django.views.generic.base import TemplateView, View
+from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
 from . import forms
@@ -14,21 +13,24 @@ class Index(FormView):
     success_url = '/admin'
 
 
-class Categorys(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, "all-Category.html")
+class Categorys(FormView):
+    template_name = "all-Category.html"
+    form_class = forms.RegisterForm
 
 
-class SiteMap(TemplateView):
+class SiteMap(FormView):
     template_name = 'siteMap.html'
+    form_class = forms.RegisterForm
 
 
-class Questions(TemplateView):
+class Questions(FormView):
     template_name = 'Questions.html'
+    form_class = forms.RegisterForm
 
 
-class ShowWebsites(TemplateView):
+class ShowWebsites(FormView):
     template_name = 'showwebsites.html'
+    form_class = forms.RegisterForm
 
     def get_context_data(self, **kwargs):
         context = super(ShowWebsites, self).get_context_data(**kwargs)
@@ -47,16 +49,19 @@ class ShowWebsites(TemplateView):
         return context
 
 
-class Contact(TemplateView):
+class Contact(FormView):
     template_name = 'contact.html'
+    form_class = forms.RegisterForm
 
 
-class Vision(TemplateView):
+class Vision(FormView):
     template_name = 'Vision.html'
+    form_class = forms.RegisterForm
 
 
-class About(TemplateView):
+class About(FormView):
     template_name = 'about.html'
+    form_class = forms.RegisterForm
 
 
 class Websitepage1(TemplateView):

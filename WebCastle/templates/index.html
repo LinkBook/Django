@@ -344,7 +344,8 @@
                     </li>
 
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#login-modal">ورود</a>
+                        {#                        <a href="#" data-toggle="modal" data-target="#login-modal">ورود</a>#}
+                        <a href="/admin/login/?next=/admin/">ورود</a>
                     </li>
 
 
@@ -712,30 +713,30 @@
             <!-- END Register Modal -->
         {% endblock %}
 
-        {% block Login %}
-            <!-- Login Modal -->
-            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true" style="display: none;">
-                <div class="modal-dialog">
-                    <div class="loginmodal-container">
-                        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
-                        <h1> ورود به حساب کاربری</h1><br>
-                        <form action="/admin/login/?next=/admin/" method="post">
-                            {% csrf_token %}
-                            <input type="text" name="username" placeholder="نام کاربری">
-                            <input type="password" name="password" placeholder="پسورد">
-                            <input type="submit" name="login" class="login loginmodal-submit" value="ورود">
-                        </form>
-
-                        <div class="login-help">
-                            <a href="#">فراموش کردن رمز عبور</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- END Login Modal -->
-        {% endblock %}
+        {#        {% block Login %}#}
+        {#            <!-- Login Modal -->#}
+        {#            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"#}
+        {#                 aria-hidden="true" style="display: none;">#}
+        {#                <div class="modal-dialog">#}
+        {#                    <div class="loginmodal-container">#}
+        {#                        <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>#}
+        {#                        <h1> ورود به حساب کاربری</h1><br>#}
+        {#                        <form action="/admin/login/?next=/admin/" method="post">#}
+        {#                            {% csrf_token %}#}
+        {#                            <input type="text" name="username" placeholder="نام کاربری">#}
+        {#                            <input type="password" name="password" placeholder="پسورد">#}
+        {#                            <input type="submit" name="login" class="login loginmodal-submit" value="ورود">#}
+        {#                        </form>#}
+        {##}
+        {#                        <div class="login-help">#}
+        {#                            <a href="#">فراموش کردن رمز عبور</a>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {##}
+        {#            </div>#}
+        {#            <!-- END Login Modal -->#}
+        {#        {% endblock %}#}
 
         <hr>
 
