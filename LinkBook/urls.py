@@ -30,7 +30,8 @@ urlpatterns = [
     url(r'^contact$', Contact.as_view(), name='contact'),
     url(r'^Vision$', Vision.as_view(), name='Vision'),
     url(r'^about$', About.as_view(), name='about'),
-    url(r'^Websitepage1$', Websitepage1.as_view(), name='Websitepage1'),
+    # url(r'^Websitepage1$', Websitepage1.as_view(), name='Websitepage1'),
+    url(r'^Websitepage1$', Webpage, name='Websitepage1'),
     url(r'^Websitepage2$', Websitepage2.as_view(), name='Websitepage2'),
     url(r'^Websitepage3$', Websitepage3.as_view(), name='Websitepage3'),
 ]

@@ -1,7 +1,6 @@
-import datetime
-
 from django.contrib.auth.models import User
 from django.db.models import *
+from django.db.models.signals import post_save
 
 
 class Category(Model):
@@ -22,7 +21,7 @@ class Webpage(Model):
     Webpage_logo = FileField(upload_to='Webpagelogo/%Y/%m/%d')
     Webpage_url = URLField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def Edit_Webpage(self):
@@ -33,12 +32,12 @@ class Webpage(Model):
 class Festival(Model):
     webpage = ForeignKey(Webpage, null=False)
     fest_title = CharField(max_length=100)
-    fest_logo = FileField(upload_to='Festivallogo/%Y/%m/%d')
+    fest_logo = FileField(upload_to='/Festivallogo/%Y/%m/%d')
     fest_text = TextField()
     fest_url = URLField()
 
-    def __unicode__(self):
-        return self.ftitle
+    def __str__(self):
+        return self.fest_title
 
 
 class Subscribe(Model):
@@ -52,7 +51,7 @@ class Comments(Model):
     date_send = DateTimeField(default=datetime.datetime.now(), blank=True)
     comment = TextField(null=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.comment
 
 
@@ -67,11 +66,21 @@ class contact(Model):
     email = EmailField(null=False)
     message = TextField(null=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.message
+
 
 # class Reg(Model):
 #     username = CharField(max_length=30)
 #     email = EmailField(null=False)
 #     password = CharField(null=False, max_length=300)
 #     repassword = CharField(null=False, max_length=300)
+
+
+def save_post(sender, instance, created, *args, **kwargs):
+    print(sender)
+    print(instance)
+    print(created)
+
+
+post_save.connect(save_post, sender=Festival)

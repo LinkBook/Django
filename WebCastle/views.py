@@ -1,8 +1,9 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
-from . import forms
+from .models import *
 
 
 # Create your views here.
@@ -64,8 +65,14 @@ class About(FormView):
     form_class = forms.RegisterForm
 
 
-class Websitepage1(TemplateView):
-    template_name = 'websitepage1.html'
+# class Websitepage1(TemplateView):
+#     template_name = 'websitepage1.html'
+def Webpage(request):
+    tempname = 'websitepage1.html'
+    f = Festival.objects.filter(fest_title="چگونه")
+    print(str(f))
+    print(type(f))
+    return render(request, tempname, {"F": f})
 
 
 class Websitepage2(TemplateView):

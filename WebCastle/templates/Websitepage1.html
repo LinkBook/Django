@@ -27,6 +27,11 @@
 
 <!-- *********************************************** -->
 <!-- Start  Navigation -->
+
+
+{#{% for X in F %}#}
+{#    <li><a href="{{ X.fest_url }}/">{{ X.fest_title }}</a></li>#}
+{#{% endfor %}#}
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
     <!-- Menu Navigation -->
@@ -369,7 +374,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                عنوان وب سایت
+                {{ F.0.fest_title }}
             </h1>
             <ol class="breadcrumb">
                 <li><a href="showWebsites">دسته اصلی</a>
@@ -383,19 +388,13 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-lg-8">
-            <img class="img-responsive" src="../static/img/wp1.png" alt="">
+            <img class="img-responsive" src="../{{ F.0.fest_logo }}" alt="">
 
             <h2 class="page-header">
                 چشم انداز
             </h2>
 
-            <p>
-                در راستای افزایش کاربران دنیای مجازی و با توجه به شکل گیری بازارهای رقابتی و تلاش سازمان ها و متخصصین
-                برای معرواهد بود که شامل سه قسمت اصلی است و تمام اطلاعات این قسمت ها در پنل های موجود در لینک بوک مدیریت
-                می شود.
-                یکی از ویژگی های اصلی ما ساده بودن دسترسی ها و یکپارچگی ماست.
-
-            </p>
+            <p>{{ F.0.fest_text }}</p>
 
             <h2 class="page-header">
                 ماموریت
@@ -496,7 +495,7 @@
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
                             maxime.</p>
-                        <a class="btn btn-md btn-primary btn-block" href="#"> مشاهده جشنواره </a>
+                        <a class="btn btn-md btn-primary btn-block" href="{{ F.0.fest_url }}"> مشاهده جشنواره </a>
                     </div>
                 </div>
             </div>
