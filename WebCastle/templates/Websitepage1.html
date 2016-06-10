@@ -369,7 +369,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                عنوان وب سایت
+                <a href={{ webcontext.Webpage_url }}>{{ webcontext.title }}</a>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="showWebsites">دسته اصلی</a>
@@ -383,32 +383,21 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-lg-8">
-            <img class="img-responsive" src="../static/img/wp1.png" alt="">
+            <img class="img-responsive" src="{{ webcontext.Webpage_logo.url }}" alt="{{ webcontext.Webpage_logo.url }}">
+            <a href="{{ webcontext.Webpage_logo.url }}">Pic</a>
 
             <h2 class="page-header">
                 چشم انداز
             </h2>
 
-            <p>
-                در راستای افزایش کاربران دنیای مجازی و با توجه به شکل گیری بازارهای رقابتی و تلاش سازمان ها و متخصصین
-                برای معرواهد بود که شامل سه قسمت اصلی است و تمام اطلاعات این قسمت ها در پنل های موجود در لینک بوک مدیریت
-                می شود.
-                یکی از ویژگی های اصلی ما ساده بودن دسترسی ها و یکپارچگی ماست.
-
-            </p>
+            <p>{{ webcontext.vision }} </p>
 
             <h2 class="page-header">
                 ماموریت
             </h2>
 
 
-            <p>
-                در راستای افزایش کاربران دنیای مجازی و با توجه به شکل گیری بازارهای رقابتی و تلاش سازمان ها و متخصصین
-                برای معرواهد بود که شامل سه قسمت اصلی است و تمام اطلاعات این قسمت ها در پنل های موجود در لینک بوک مدیریت
-                می شود.
-                یکی از ویژگی های اصلی ما ساده بودن دسترسی ها و یکپارچگی ماست.
-
-            </p>
+            <p>{{ webcontext.mission }}</p>
 
 
         </div>

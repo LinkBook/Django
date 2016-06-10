@@ -1,5 +1,3 @@
-import datetime
-
 from django.contrib.auth.models import User
 from django.db.models import *
 
@@ -22,7 +20,7 @@ class Webpage(Model):
     Webpage_logo = FileField(upload_to='Webpagelogo/%Y/%m/%d')
     Webpage_url = URLField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def Edit_Webpage(self):
@@ -37,7 +35,7 @@ class Festival(Model):
     fest_text = TextField()
     fest_url = URLField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.ftitle
 
 

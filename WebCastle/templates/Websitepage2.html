@@ -375,8 +375,8 @@
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">عنوان کلی وب سایت موردنظر
-                <small>زیردسته</small>
+            <h1 class="page-header">عنوان کلی وب سایت موردنظر:
+                <a href={{ webcontext.Webpage_url }}>{{ webcontext.title }}</a>
             </h1>
 
         </div>
@@ -412,7 +412,8 @@
                          aria-labelledby="headingOne">
                         <div class="panel-body">
                             <!-- Tab content goes here -->
-                            .....
+                            <p>{{ webcontext.vision }} </p>
+
                         </div>
                     </div>
                 </div>
@@ -433,7 +434,7 @@
                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                         <div class="panel-body">
                             <!-- Tab content goes here -->
-                            ....
+                            <p>{{ webcontext.mission }}</p>
                         </div>
                     </div>
                 </div>
@@ -455,12 +456,12 @@
                          aria-labelledby="headingThree">
                         <div class="panel-body">
                             <!-- tab content goes here -->
-                            ....
+                            <p>{{ webcontext.service_product }}</p>
                         </div>
                     </div>
                 </div>
             </div> <!-- / panel-group -->
-            <a class="btn btn-md btn-primary btn-block" href="#">مشاهد وب سایت</a> <br><br>
+            <a class="btn btn-md btn-primary btn-block" href="{{ webcontext.Webpage_url }}">مشاهد وب سایت</a> <br><br>
 
 
             <!-- Side Widget Well -->
@@ -515,7 +516,8 @@
         <!-- start col-md-8 -->
 
         <div class="col-lg-8">
-            <img class="img-responsive" src="../static/img/wp1.png" alt="">
+            <img class="img-responsive" src="{{ webcontext.Webpage_logo.url }}" alt="{{ webcontext.Webpage_logo.url }}">
+            <a href="{{ webcontext.Webpage_logo.url }}">Pic</a>
 
         </div>
 

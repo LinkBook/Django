@@ -1,34 +1,40 @@
+from django import template
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render
-from django.views.generic.base import TemplateView, View
+from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import FormView
 
-from . import forms
+from .forms import *
+from .models import *
+
+TeLib = template.Library()
 
 
 # Create your views here.
 
 class Index(FormView):
     template_name = 'index.html'
-    form_class = forms.RegisterForm
+    form_class = RegisterForm
     success_url = '/admin'
 
 
-class Categorys(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, "all-Category.html")
+class Categorys(FormView):
+    template_name = "all-Category.html"
+    form_class = RegisterForm
 
 
-class SiteMap(TemplateView):
+class SiteMap(FormView):
     template_name = 'siteMap.html'
+    form_class = RegisterForm
 
 
-class Questions(TemplateView):
+class Questions(FormView):
     template_name = 'Questions.html'
+    form_class = RegisterForm
 
 
-class ShowWebsites(TemplateView):
+class ShowWebsites(FormView):
     template_name = 'showwebsites.html'
+    form_class = RegisterForm
 
     def get_context_data(self, **kwargs):
         context = super(ShowWebsites, self).get_context_data(**kwargs)
@@ -47,25 +53,31 @@ class ShowWebsites(TemplateView):
         return context
 
 
-class Contact(TemplateView):
+class Contact(FormView):
     template_name = 'contact.html'
+    form_class = RegisterForm
 
 
-class Vision(TemplateView):
+class Vision(FormView):
     template_name = 'Vision.html'
+    form_class = RegisterForm
 
 
-class About(TemplateView):
+class About(FormView):
     template_name = 'about.html'
+    form_class = RegisterForm
 
 
-class Websitepage1(TemplateView):
-    template_name = 'websitepage1.html'
+def Websitepage1(request, webtitle="چگونه دات آی آر"):
+    webcontext = get_object_or_404(Webpage, title=webtitle)
+    return render(request, 'websitepage1.html', {"webcontext": webcontext})
 
 
-class Websitepage2(TemplateView):
-    template_name = 'websitepage2.html'
+def Websitepage2(request, webtitle="تیم لاک "):
+    webcontext = get_object_or_404(Webpage, title=webtitle)
+    return render(request, 'websitepage2.html', {"webcontext": webcontext})
 
 
-class Websitepage3(TemplateView):
-    template_name = 'websitepage3.html'
+def Websitepage3(request, webtitle="تیم لاک "):
+    webcontext = get_object_or_404(Webpage, title=webtitle)
+    return render(request, 'websitepage3.html', {"webcontext": webcontext})
