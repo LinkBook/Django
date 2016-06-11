@@ -522,23 +522,27 @@
                 <div class="well">
                     <h4>Leave a Comment:</h4>
 
-                    <form class="form-horizontal">
+
+                    <form class="form-horizontal" action="webpage" method="post">
+                        {% csrf_token %}
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="نام">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="email" name="email" class="form-control" id="inputPassword3"
+                                       placeholder="ایمیل">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <label for="inputPassword3" class="col-sm-2 control-label">Comment</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="5"></textarea>
+                                <input type="text" name="comment" placeholder="کامنت" textarea class="form-control"
+                                       rows="5"></textarea>
 
                             </div>
                         </div>
@@ -615,12 +619,14 @@
                 <div class="loginmodal-container">
                     <button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
                     <h1> ثبت نام </h1><br>
-                    <form action="" method="">
+                    {% csrf_token %}
+                    <form action="index" method="post">
+                        {% csrf_token %}
                         <input type="text" name="name" placeholder="نام">
                         <input type="text" name="username" placeholder="نام کاربری">
                         <input type="email" name="user" placeholder="ایمیل" required>
                         <input type="password" name="pass" placeholder="پسورد">
-                        <input type="password" name="pass" placeholder="تکرار پسورد">
+                        <input type="password" name="rep" placeholder="تکرار پسورد">
                         <input type="submit" name="login" class="login loginmodal-submit" value=" ثبت نام ">
                     </form>
 
@@ -738,7 +744,7 @@
             interval: 5000 //changes the speed
         })
     </script>
-
+</div>
 </body>
 
 </html>

@@ -23,6 +23,7 @@ urlpatterns = [
                   url(r'^admin/', admin.site.urls),
                   url(r'^web/', include('WebCastle.urls', namespace='Webcastel')),
                   url(r'^$', Index.as_view(), name='Home'),
+                  # url(r'^$', RedirectView.as_view(url='/myapp/list/', permanent=True)),
                   url(r'^index$', Index.as_view()),
                   url(r'^all-Category$', Categorys.as_view(), name='all-Category'),
                   url(r'^siteMap$', SiteMap.as_view(), name='siteMap'),
@@ -34,4 +35,4 @@ urlpatterns = [
                   url(r'^Websitepage1$', Websitepage1, name='Websitepage1'),
                   url(r'^Websitepage2$', Websitepage2, name='Websitepage2'),
                   url(r'^Websitepage3$', Websitepage3, name='Websitepage3'),
-              ] + static(settings.MEDIA_URL, MEDIA_ROOT=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

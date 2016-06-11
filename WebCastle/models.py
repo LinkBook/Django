@@ -1,5 +1,19 @@
 from django.contrib.auth.models import User
 from django.db.models import *
+import datetime
+
+
+class Karbar(Model):
+    name = CharField(max_length=100, verbose_name="نام", blank=True)
+    username = CharField(max_length=100, verbose_name="نام کاربری ")
+    email = CharField(max_length=100, verbose_name="ایمیل")
+    password = CharField(max_length=100, verbose_name="پسورد")
+    rep = CharField(max_length=100, verbose_name="تکرار پسورد")
+
+
+class login(Model):
+    username = CharField(max_length=100)
+    password = CharField(max_length=100)
 
 
 class Category(Model):
@@ -45,12 +59,12 @@ class Subscribe(Model):
 
 
 class Comments(Model):
-    comment_name = CharField(max_length=30)
-    comment_email = EmailField(null=False)
+    comment_name = CharField(max_length=30, verbose_name="نام")
+    comment_email = EmailField(null=False, verbose_name="ایمیل")
     date_send = DateTimeField(default=datetime.datetime.now(), blank=True)
-    comment = TextField(null=False)
+    comment = TextField(null=False, verbose_name="محتوای کامنت")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.comment
 
 
@@ -60,16 +74,10 @@ class Tag(Model):
 
 
 # contact class
-class contact(Model):
-    name = CharField(max_length=30)
-    email = EmailField(null=False)
-    message = TextField(null=False)
+class Contact(Model):
+    name = CharField(max_length=30, verbose_name="نام")
+    email = EmailField(null=False, verbose_name="ایمیل")
+    message = TextField(null=False, verbose_name="محتوای پیام")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.message
-
-# class Reg(Model):
-#     username = CharField(max_length=30)
-#     email = EmailField(null=False)
-#     password = CharField(null=False, max_length=300)
-#     repassword = CharField(null=False, max_length=300)

@@ -54,12 +54,13 @@
                 از طریق فرم زیر میتوانید با ما ارتباط داشته باشید
             </h3>
 
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form name="sentMessage" id="contactForm" novalidate action="contact.html" method="post">
+                {% csrf_token %}
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>نام کامل :</label>
                         <input type="text" class="form-control" name="name" id="name" required
-                               data-validation-required-message="Please enter your name.">
+                               data-validation-required-message="Please enter your name." placeholder="نام کامل">
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
                     <div class="controls">
                         <label>ایمیل :</label>
                         <input type="email" class="form-control" name="email" id="email" required
-                               data-validation-required-message="Please enter your email address.">
+                               data-validation-required-message="Please enter your email address." placeholder="ایمیل">
                     </div>
                 </div>
                 <div class="control-group form-group">
@@ -78,7 +79,7 @@
                         <label>پیام ارسالی: </label>
                         <textarea rows="10" cols="100" class="form-control" name="message" id="message" required
                                   data-validation-required-message="Please enter your message" maxlength="999"
-                                  style="resize:none"></textarea>
+                                  style="resize:none" placeholder="پیام ارسالی"></textarea>
                     </div>
                 </div>
                 <div id="success"></div>
@@ -93,6 +94,5 @@
 
 
     <hr>
-    </div>
 {% endblock %}{% block Carousel %}
 {% endblock %}
