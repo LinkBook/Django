@@ -29,10 +29,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django_admin_bootstrapped',
-    'django.contrib.admin',
+    'viewflow',
+    # 'dal',
+    # 'dal_select2',
+    # 'django_admin_bootstrapped',
+    'material',
+    # 'material.frontend',
+    'material.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    # 'grappelli.dashboard',
+    # 'grappelli',
+    'django.contrib.admin',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -51,7 +59,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'WebCastle.urls'
+ROOT_URLCONF = 'LinkBook.urls'
 
 TEMPLATES = [
     {
@@ -71,6 +79,8 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'material.frontend.context_processors.modules',
+
             ],
         },
     },
@@ -132,6 +142,7 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 # Default settings
 BOOTSTRAP3 = {
@@ -193,3 +204,6 @@ BOOTSTRAP3 = {
         'inline': 'bootstrap3.renderers.InlineFieldRenderer',
     },
 }
+
+# GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
+# MATERIAL_ADMIN_SITE = 'mymodule.admin.admin_site'

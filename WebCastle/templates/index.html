@@ -416,7 +416,7 @@
                     <h1 class="page-header"></h1>
 
                     <ol class="breadcrumb">
-                        <li><a href="showWebsites"> کسب و کارهای آنلاین</a>
+                        {#                        <li><a href="showWebsites"> کسب و کارهای آنلاین</a>#}
                         </li>
                     </ol>
 
@@ -429,47 +429,18 @@
             <!-- Websites Row 1 -->
 
             <div class="row">
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="Websitepage1">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="Websitepage1">1</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="Websitepage2">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="Websitepage2">2</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="Websitepage3">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="Websitepage3">3</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
-                             alt="Bootstrap Image Preview">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
+                {% for choice in webcontext %}
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive no-padding">
+                        <a href="Websitepage-{{ choice.id }}">
+                            <img class="img-hover responsive-img" src="{{ choice.Webpage_logo.url }}"
+                                 alt="{{ choice.Webpage_logo.url }}" height="250" width="260">
+                        </a>
+                        <h4>
+                            <a class="btn btn-sm btn-primary btn-block"
+                               href="Websitepage-{{ choice.id }}">{{ choice.title }}</a>
+                        </h4>
+                    </div>
+                {% endfor %}
             </div>
 
             <!-- /. end row 1 -->
@@ -477,187 +448,187 @@
 
             <br>
 
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <ol class="breadcrumb">
-                        <li><a href="showWebsites">خدمات آنلاین </a>
-                        </li>
-                    </ol>
-
-                </div>
-            </div>
+            {#            <div class="row">#}
+            {#                <div class="col-lg-12">#}
+            {##}
+            {#                    <ol class="breadcrumb">#}
+            {#                        <li><a href="showWebsites">خدمات آنلاین </a>#}
+            {#                        </li>#}
+            {#                    </ol>#}
+            {##}
+            {#                </div>#}
+            {#            </div>#}
 
 
 
 
             <!-- Websites Row 2 -->
-            <div class="row">
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
-                             alt="Bootstrap Image Preview">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-            </div>
+            {#            <div class="row">#}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"#}
+            {#                             alt="Bootstrap Image Preview">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {#            </div>#}
             <!-- /. end row 2 -->
 
 
             <br>
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <ol class="breadcrumb">
-                        <li><a href="showWebsites"> اطلاع رسانی و محتوا </a>
-                        </li>
-                    </ol>
-
-                </div>
-            </div>
+            {#            <div class="row">#}
+            {#                <div class="col-lg-12">#}
+            {##}
+            {#                    <ol class="breadcrumb">#}
+            {#                        <li><a href="showWebsites"> اطلاع رسانی و محتوا </a>#}
+            {#                        </li>#}
+            {#                    </ol>#}
+            {##}
+            {#                </div>#}
+            {#            </div>#}
 
 
             <!-- Websites Row 3 -->
 
-            <div class="row">
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
-                             alt="Bootstrap Image Preview">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-            </div>
+            {#            <div class="row">#}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"#}
+            {#                             alt="Bootstrap Image Preview">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {#            </div>#}
 
             <!-- /. end row 3 -->
             <br>
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <ol class="breadcrumb">
-                        <li><a href="showWebsites"> شخصی و شرکتی </a>
-                        </li>
-                    </ol>
-
-                </div>
-            </div>
+            {#            <div class="row">#}
+            {#                <div class="col-lg-12">#}
+            {##}
+            {#                    <ol class="breadcrumb">#}
+            {#                        <li><a href="showWebsites"> شخصی و شرکتی </a>#}
+            {#                        </li>#}
+            {#                    </ol>#}
+            {##}
+            {#                </div>#}
+            {#            </div>#}
 
 
 
 
             <!-- Websites Row 4 -->
 
-            <div class="row">
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">
-                    <a href="../Webpage">
-                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"
-                             alt="Bootstrap Image Preview">
-                    </a>
-                    <h4>
-                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>
-                    </h4>
-                </div>
-
-            </div>
+            {#            <div class="row">#}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-responsive img-hover" src="{% static 'img/Home.png' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {##}
+            {#                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 img-responsive">#}
+            {#                    <a href="../Webpage">#}
+            {#                        <img class="img-thumbnail img-hover" src="{% static 'img/Home.png' %}"#}
+            {#                             alt="Bootstrap Image Preview">#}
+            {#                    </a>#}
+            {#                    <h4>#}
+            {#                        <a class="btn btn-sm btn-primary btn-block" href="#">مشاهد وب سایت</a>#}
+            {#                    </h4>#}
+            {#                </div>#}
+            {##}
+            {#            </div>#}
 
             <!-- /. end row 4 -->
         {% endblock %}

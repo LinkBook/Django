@@ -1,14 +1,11 @@
 from django import template
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.views.generic import View
 from django.views.generic.edit import FormView
 from .forms import *
 from .models import *
-
-TeLib = template.Library()
-
 
 # Create your views here.
 def Contact2(request):
@@ -77,9 +74,13 @@ class Questions(FormView):
     form_class = RegisterForm
 
 
-class index(FormView):
-    template_name = 'index.html'
-    form_class = RegisterForm
+# class index(FormView):
+#     template_name = 'index.html'
+#     form_class = RegisterForm
+def index(request):
+    webcontext = get_list_or_404(Webpage)
+    print("zzz", webcontext)
+    return render(request, 'index.html', {"webcontext": webcontext, "choice": 0})
 
 
 class ShowWebsites(FormView):
@@ -138,24 +139,24 @@ class ShowWebsites(View):
         return render(request, "showWebsites.html")
 
 
-def Websitepage1(request, webtitle="چگونه دات آی آر"):
-    webcontext = get_object_or_404(Webpage, title=webtitle)
+def Websitepage1(request, webtitle="1"):
+    webcontext = get_object_or_404(Webpage, id=webtitle)
     return render(request, 'websitepage1.html', {"webcontext": webcontext})
+
+
+def Websitepage2(request, webtitle="2"):
+    webcontext = get_object_or_404(Webpage, id=webtitle)
+    return render(request, 'websitepage2.html', {"webcontext": webcontext})
+
+
+def Websitepage3(request, webtitle="3"):
+    webcontext = get_object_or_404(Webpage, id=webtitle)
+    return render(request, 'websitepage3.html', {"webcontext": webcontext})
 
 
 class contact(View):
     def get(self, request, *args, **kwargs):
         return render(request, "contact.html")
-
-
-def Websitepage2(request, webtitle="تیم لاک "):
-    webcontext = get_object_or_404(Webpage, title=webtitle)
-    return render(request, 'websitepage2.html', {"webcontext": webcontext})
-
-
-def Websitepage3(request, webtitle="تیم لاک "):
-    webcontext = get_object_or_404(Webpage, title=webtitle)
-    return render(request, 'websitepage3.html', {"webcontext": webcontext})
 
 
 class Vision(View):

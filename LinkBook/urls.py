@@ -16,15 +16,17 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.conf import settings
 
 from WebCastle.views import *
 
 urlpatterns = [
+                  # url(r'^grappelli/', include('grappelli.urls')),
                   url(r'^admin/', admin.site.urls),
                   url(r'^web/', include('WebCastle.urls', namespace='Webcastel')),
-                  url(r'^$', Index.as_view(), name='Home'),
+                  url(r'^$', index, name='Home'),
                   # url(r'^$', RedirectView.as_view(url='/myapp/list/', permanent=True)),
-                  url(r'^index$', Index.as_view()),
+                  url(r'^index$', index),
                   url(r'^all-Category$', Categorys.as_view(), name='all-Category'),
                   url(r'^siteMap$', SiteMap.as_view(), name='siteMap'),
                   url(r'^Questions$', Questions.as_view(), name='Questions'),
@@ -32,7 +34,7 @@ urlpatterns = [
                   url(r'^contact$', Contact.as_view(), name='contact'),
                   url(r'^Vision$', Vision.as_view(), name='Vision'),
                   url(r'^about$', About.as_view(), name='about'),
-                  url(r'^Websitepage1$', Websitepage1, name='Websitepage1'),
-                  url(r'^Websitepage2$', Websitepage2, name='Websitepage2'),
+                  url(r'^Websitepage-(?P<webtitle>[\w-]+)', Websitepage2, name='Websitepage1'),
+                  url(r'^Websitepage1$', Websitepage2, name='Websitepage2'),
                   url(r'^Websitepage3$', Websitepage3, name='Websitepage3'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
