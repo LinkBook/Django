@@ -24,15 +24,31 @@ SECRET_KEY = '$le))r^r(t&2-h6c#(8thnndiunwhs8z6bbcx7h*&p%l$_(g8o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django_admin_bootstrapped',
-    'django.contrib.admin',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.instagram',
+    # 'allauth.socialaccount.providers.linkedin',
+    # 'viewflow',
+    # 'dal',
+    # 'dal_select2',
+    # 'django_admin_bootstrapped',
+    'material',
+    # 'material.frontend',
+    'material.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    # 'grappelli.dashboard',
+    # 'grappelli',
+    'django.contrib.sites',
+    'django.contrib.admin',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -51,7 +67,9 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'WebCastle.urls'
+SITE_ID = 1
+
+ROOT_URLCONF = 'LinkBook.urls'
 
 TEMPLATES = [
     {
@@ -71,6 +89,8 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'material.frontend.context_processors.modules',
+
             ],
         },
     },
@@ -83,14 +103,14 @@ WSGI_APPLICATION = 'LinkBook.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'template1',
-        # 'USER': 'postgres',
-        # 'PASSWORD': '',
-        # 'HOST': '127.0.0.1',
-        # 'PORT': '5432',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '1234qwer',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -132,6 +152,7 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 # Default settings
 BOOTSTRAP3 = {
@@ -193,3 +214,18 @@ BOOTSTRAP3 = {
         'inline': 'bootstrap3.renderers.InlineFieldRenderer',
     },
 }
+
+# GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
+# MATERIAL_ADMIN_SITE = 'mymodule.admin.admin_site'
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    # 'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+LOGIN_URL = 'login'
+LOGUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'index'

@@ -25,170 +25,36 @@
                     <div class="col-lg-3 col-md-3 ">
                         <p> کسب وکارهای آنلاین </p><br>
 
-                        <li>
-                            <a href="#"> خودرو </a>
-                        </li>
-                        <li>
-                            <a href="#"> مسکن و املاک</a>
-                        </li>
-                        <li>
-                            <a href="#"> خرید گروهی </a>
-                        </li>
-                        <li>
-                            <a href="#"> تبلیغات آنلاین </a>
-                        </li>
-                        <li>
-                            <a href="#"> فروشگاه های آنلاین </a>
-                        </li>
-                        <li>
-                            <a href="#"> اپ استور و مارکت ها </a>
-                        </li>
-                        <li>
-                            <a href="#"> فروشگاه های اختصاصی </a>
-                        </li>
-                        <li>
-                            <a href="#"> هتل داری و رزرواسیون </a>
-                        </li>
-                        <li>
-                            <a href="#"> نیازمندی های تخصصی </a>
-                        </li>
-                        <li>
-                            <a href="#"> نیازمندی های عمومی</a>
-                        </li>
-
+                        {% for KTag in KTags %}
+                            <li><a href="showWebsites-{{ KTag.id }}">{{ KTag }}</a>
+                            </li>
+                        {% endfor %}
                     </div>
 
 
                     <div class="col-lg-3 col-md-3 ">
                         <p> اطلاع رسانی و محتوا </p><br>
 
-                        <li>
-                            <a href="#">سبک زندگی</a>
-                        </li>
-                        </li>
-                        <li>
-                            <a href="#"> انجمن ها</a>
-                        </li>
-                        </li>
-                        <li>
-                            <a href="#"> محیط زیست</a>
-                        </li>
-                        <li>
-                            <a href="#"> عکاسی</a>
-                        </li>
-                        <li>
-                            <a href="#"> علم و دانش</a>
-                        </li>
-                        <li>
-                            <a href="#"> فرهنگ و هنر</a>
-                        </li>
-                        <li>
-                            <a href="#"> خانواده و کودک</a>
-                        </li>
-                        <li>
-                            <a href="#"> دین و معارف </a>
-                        </li>
-                        <li>
-                            <a href="#"> چندرسانه ای بر خط </a>
-                        </li>
-
-                        <li>
-                            <a href="#"> سینما و تئاتر</a>
-                        </li>
-                        <li>
-                            <a href="#"> شبکه های اجتماعی </a>
-                        </li>
-
-
-                        <li>
-                            <a href="#"> مرجع کسب و کارها</a>
-                        </li>
-
-                        <li>
-                            <a href="#"> گردشگری و سفر</a>
-                        </li>
-
-                        <li>
-                            <a href="#"> ورزش، بهداشت و سلامت</a>
-                        </li>
-                        <li>
-                            <a href="#"> کامپیوتر و فناوری اطلاعات</a>
-                        </li>
-                        <li>
-                            <a href="#">سایت های خبری و خبرگزاری ها</a>
-                        </li>
-                        <li>
-                            <a href="#"> سایت های شهری و محله ای </a>
-                        </li>
-
+                        {% for ETag in ETags %}
+                            <li><a href="showWebsites-{{ ETag.id }}">{{ ETag }}</a>
+                            </li>
+                        {% endfor %}
                     </div>
 
 
                     <div class="col-lg-3 col-md-3 ">
                         <p> شخصی و شرکتی </p><br>
-
-                        <li>
-                            <a href="#"> بانک و بیمه </a>
-                        </li>
-                        <li>
-                            <a href="#">صنایع سنگین</a>
-                        </li>
-                        <li>
-                            <a href="#">صنایع غذایی</a>
-                        </li>
-                        <li>
-                            <a href="#">موسسات آموزشی </a>
-                        </li>
-                        <li>
-                            <a href="#">وب سایت های شخصی </a>
-                        </li>
-                        <li>
-                            <a href="#">صنایع دارویی و بهداشتی</a>
-                        </li>
-
-                        <li>
-                            <a href="#">شرکت های طراحی سایت</a>
-                        </li>
-                        <li>
-                            <a href="#">شرکت های بورس و فرابورس </a>
-                        </li>
-                        <li>
-                            <a href="#">سازمان های دولتی و عمومی</a>
-                        </li>
-                        <li>
-                            <a href="#">تامین کنندگان اینترنت و زیرساخت </a>
-                        </li>
-
+                        {% for STag in STags %}
+                            <li><a href="showWebsites-{{ STag.id }}">{{ STag }}</a>
+                            </li>
+                        {% endfor %}
                     </div>
                     <div class="col-lg-3 col-md-3 ">
                         <p> خدمات آنلاین </p><br>
-
-                        <li>
-                            <a href="#"> آموزش آنلاین </a>
-                        </li>
-                        <li>
-                            <a href="#"> بازی های آنلاین </a>
-                        </li>
-                        <li>
-                            <a href="#"> پرداخت آنلاین </a>
-                        </li>
-                        <li>
-                            <a href="#"> خبرخوان های آنلاین </a>
-                        </li>
-
-                        <li>
-                            <a href="#"> سرویس های وبلاگ</a>
-                        </li>
-                        <li>
-                            <a href="#"> تغذیه و رستوران ها </a>
-                        </li>
-                        <li>
-                            <a href="#"> تغذیه و رستوران ها</a>
-                        </li>
-                        <li>
-                            <a href="#"> سرویس نرم افزاری آنلاین </a>
-                        </li>
-
+                        {% for KhTag in KhTags %}
+                            <li><a href="showWebsites-{{ KhTag.id }}">{{ KhTag }}</a>
+                            </li>
+                        {% endfor %}
                     </div>
 
 

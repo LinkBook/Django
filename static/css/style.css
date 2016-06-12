@@ -772,6 +772,11 @@ hr.small {
     background: linear-gradient(53deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
 }
 
+.img-responsive2 {
+    width: 100%;
+    height: auto;
+}
+
 /*----------------------------------
  END Websitepage 2-3
     

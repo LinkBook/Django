@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>wp2</title>
+    <title>{{ webcontext.title }}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
@@ -508,14 +508,14 @@
                 </div>
             </div>
 
-
         </div> <!-- /col-md-4 -->
 
 
         <!-- start col-md-8 -->
 
         <div class="col-lg-8">
-            <img class="img-responsive" src="{{ webcontext.Webpage_logo.url }}" alt="{{ webcontext.Webpage_logo.url }}">
+            <img class="img-responsive2" src="{{ webcontext.Webpage_logo.url }}"
+                 alt="{{ webcontext.Webpage_logo.url }}">
             <a href="{{ webcontext.Webpage_logo.url }}">Pic</a>
 
         </div>
@@ -526,41 +526,18 @@
         <div class="col-lg-8">
             <h2 class="page-header">افتخارات و عناوین</h2>
         </div>
-
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="../static/img/Festival.png" alt="">
-                <div class="caption">
-                    <h3>عنوان جشنواره<br>
-                        <small>
-                            <time datetime="2014-01-20">January 20th, 2014</time>
-                        </small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <a class="btn btn-md btn-primary btn-block" href="#"> مشاهده جشنواره </a>
+        {% for Fest in Fescontext %}
+            <div class="col-md-4 text-center">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="{{ Fest.fest_logo.url }}" alt="{{ Fest.fest_logo.url }}">
+                    <div class="caption">
+                        <h3>{{ Fest.fest_title }}<br></h3>
+                        <p>{{ Fest.fest_text }}</p>
+                        <a class="btn btn-md btn-primary btn-block" href="{{ Fest.fest_url }}">{{ Fest.fest_title }}</a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="../static/img/Festival.png" alt="">
-                <div class="caption">
-                    <h3>عنوان جشنواره<br>
-                        <small>
-                            <time datetime="2014-01-20">January 20th, 2014</time>
-                        </small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <a class="btn btn-md btn-primary btn-block" href="#"> مشاهده جشنواره </a>
-                </div>
-            </div>
-        </div>
-
-
+        {% endfor %}
         <!-- END Festival -->
 
 
