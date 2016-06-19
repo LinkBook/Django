@@ -7,6 +7,7 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         ('WebCastle', '0003_auto_20160617_1441'),
     ]
