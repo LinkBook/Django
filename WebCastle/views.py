@@ -20,21 +20,6 @@ from .models import *
 #
 #     return response
 
-
-# Create your views here.
-
-# def index(request, ):
-#     webcontext = get_list_or_404(Webpage)
-#     form = ReistrationForm(request.POST or None)
-#     if form.is_valid():
-#         new_user = form.save(commit=False)
-#         new_user.is_staff = True
-#         new_user.save()
-#     # return redirect('/admin')
-#     context = {"form": form, "webcontext": webcontext}
-#     return render(request, "index.html", context)
-
-
 class About(FormView):
     template_name = 'about.html'
     form_class = ReistrationForm
@@ -46,54 +31,28 @@ class About(FormView):
         EtelaTags = SubCategory.objects.filter(category__category_name="اطلاع رسانی و محتوا")
         ShaTags = SubCategory.objects.filter(category__category_name="شخصی و شرکتی")
         KhaTags = SubCategory.objects.filter(category__category_name="خدمات آنلاین")
-        print("Tag::", KasbTags)
+        Username = self.request.user
         context['ETags'] = EtelaTags
         context['KTags'] = KasbTags
         context['STags'] = ShaTags
         context['KhTags'] = KhaTags
+        context['username'] = Username
         return context
 
     def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
         form.save()
         return super(About, self).form_valid(form)
 
 
 class Index(About):
     template_name = 'index.html'
-    webcontext = get_list_or_404(Webpage)
+    webcontext = Webpage.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
-        context['webcontext'] = Index.webcontext
+        webcontext = Webpage.objects.all()
+        context['webcontext'] = webcontext
         return context
-
-
-# class ShowWebsites(About):
-#     template_name = 'showwebsites.html'
-#     count = Webpage.objects.filter().count()
-#     print(count)
-#     SubCat = 1
-#     print("SubCAt::", SubCat)
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(ShowWebsites, self).get_context_data(**kwargs)
-#         # webs = get_list_or_404(Webpage)
-#         webs = Webpage.objects.filter(Sub__id=ShowWebsites.SubCat)
-#         print("webs=", webs)
-#         for i in range(ShowWebsites.count):
-#             webs
-#         paginator = Paginator(webs, 24)
-#         page = self.request.GET.get('page')
-#         try:
-#             show_webs = paginator.page(page)
-#         except PageNotAnInteger:
-#             show_webs = paginator.page(1)
-#         except EmptyPage:
-#             show_webs = paginator.page(paginator.num_pages)
-#         context['webs'] = show_webs
-#         return context
 
 
 class Categorys(About):
@@ -127,41 +86,39 @@ def Contact2(request):
     return render(request, 'contact.html')
 
 
-def Comment2(request):
-    if request.method == "GET":
-        return HttpResponse("ERROR")
-    comment_name = request.POST.get('name')
-    comment_email = request.POST.get('email')
-    comment = request.POST.get('comment')
-    form = Comments(comment_name=comment_name, comment_email=comment_email, comment=comment)
-    comments = form.save()
-    return render(request, 'Websitepage.html')
+
 
 
 def ShowWebsites(request, web="1"):
     form = ReistrationForm(request.POST or None)
     if form.is_valid():
         form.save(commit=False)
-    webcontext = get_list_or_404(Webpage, Sub__id=web)
-    # Fescontext = Festival.objects.filter(webpage=webcontext.id)
-    # Tags = SubCategory.objects.all()
-    print("zzz", webcontext, "zzzz")
+    webcontext = Webpage.objects.filter(Sub__id=web)
+    Sub = SubCategory.objects.filter(id=web)
     KasbTags = SubCategory.objects.filter(category__category_name="کسب وکارهای آنلاین")
     EtelaTags = SubCategory.objects.filter(category__category_name="اطلاع رسانی و محتوا")
     ShaTags = SubCategory.objects.filter(category__category_name="شخصی و شرکتی")
     KhaTags = SubCategory.objects.filter(category__category_name="خدمات آنلاین")
+    Username = request.user
+
     context = {"webcontext": webcontext, 'form': form, "ETags": EtelaTags, 'KTags': KasbTags, 'STags': ShaTags,
-               'KhTags': KhaTags}
-    return render(request, 'showwebsites.html', context)
+               'KhTags': KhaTags, "username": Username, "sub": Sub}
+    return render(request, 'showWebsites.html', context)
 
 
 def Websitepage(request, webtitle="1"):
     form = ReistrationForm(request.POST or None)
     if form.is_valid():
         form.save(commit=False)
-
+    Username = request.user
     webcontext = get_object_or_404(Webpage, id=webtitle)
     Fescontext = Festival.objects.filter(webpage=webcontext.id)
+    KasbTags = SubCategory.objects.filter(category__category_name="کسب وکارهای آنلاین")
+    EtelaTags = SubCategory.objects.filter(category__category_name="اطلاع رسانی و محتوا")
+    ShaTags = SubCategory.objects.filter(category__category_name="شخصی و شرکتی")
+    KhaTags = SubCategory.objects.filter(category__category_name="خدمات آنلاین")
     Tags = webcontext.Sub.all()
-    context = {"webcontext": webcontext, "Fescontext": Fescontext, "Tags": Tags, 'form': form}
+    context = {"webcontext": webcontext, "Fescontext": Fescontext, "Tags": Tags, 'form': form, "username": Username,
+               "ETags": EtelaTags, 'KTags': KasbTags, 'STags': ShaTags,
+               'KhTags': KhaTags}
     return render(request, 'Websitepage.html', context)

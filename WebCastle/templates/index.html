@@ -123,9 +123,9 @@
                                                 <a href="#"> تغییر عکس </a></p>
                                         </div>
                                         <div class="col-md-7">
-                                            <span>نام کاربری</span>
+                                            <span>{{ username }}</span>
                                             <p class="text-muted small">
-                                                mail@gmail.com</p>
+                                                {{ username.email }}</p>
                                             <div class="divider">
                                             </div>
                                             <a href="/admin" class="btn btn-primary btn-sm active">پنل مدیریت</a>
@@ -182,10 +182,11 @@
                     <li>
                         <a href="all-Category">دسته بندی ها</a>
                     </li>
-
-                    <li>
-                        <a href="#search">جستجو</a>
-                    </li>
+                    <!--
+                                        <li>
+                                            <a href="#search">جستجو</a>
+                                        </li>
+                     -->
                     {% if not user.is_authenticated %}
                         <li>
                             <a href="#" data-toggle="modal" data-target="#Register-modal">ثبت نام</a>
@@ -244,7 +245,7 @@
                 <div class="item">
                     <div class="fill" style="background-image:url('{% static 'img/slider3.png' %}');"></div>
                     <div class="carousel-caption">
-                        <h2> Caption 3 </h2>
+                        <h2>...</h2>
                     </div>
                 </div>
             </div>

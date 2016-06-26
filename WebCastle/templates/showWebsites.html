@@ -8,8 +8,8 @@
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">عنوان دسته بندی
-
+            <h1 class="page-header">عنوان دسته بندی :
+                {{ sub.0.subcategory }}
             </h1>
 
         </div>
@@ -21,8 +21,8 @@
         {% for web in webcontext %}
             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 img-portfolio">
                 <a href="Websitepage-{{ web.id }}">
-                    <img class="img-responsive img-hover" src="{{ web.Webpage_logo.url }}"
-                         alt="{{ web.Webpage_logo.url }}" height="250" width="260">
+                    <img class="img-hover" src="{{ web.Webpage_logo.url }}"
+                         alt="{{ web.Webpage_logo.url }}" style="display:block; width: 100%;height: 150px;">
                 </a>
                 <h4>
                     <a class="btn btn-sm btn-primary btn-block" href="Websitepage-{{ web.id }}">{{ web }}</a>
