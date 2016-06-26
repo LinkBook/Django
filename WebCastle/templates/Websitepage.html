@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    <a href={{ webcontext.Webpage_url }}>{{ webcontext.title }}</a>
+                    <a href="{{ webcontext.Webpage_url }}" target="_blank">{{ webcontext.title }}</a>
                 </h1>
 
             </div>
@@ -97,11 +97,12 @@
                         </div>
                     </div>
                 </div> <!-- / panel-group -->
-                <a class="btn btn-md btn-primary btn-block" href="{{ webcontext.Webpage_url }}">مشاهد وب سایت</a>
+                <a class="btn btn-md btn-primary btn-block" href="{{ webcontext.Webpage_url }}" target="_blank">مشاهد وب
+                    سایت</a>
                 <br><br>
 
 
-                <!-- Side Widget Well -->
+                <!-- Side Widget Well
                 <div class="well">
                     <h4>عضویت در خبرنامه</h4>
                     <p> با وارد کردن ایمیل خود میتوانید از همینجابه صورت مستقیم در خبرنامه این وب اسیت عضو شوید </p>
@@ -112,7 +113,7 @@
                         </div>
                     </form>
                 </div>
-
+-->
                 <!-- Blog Categories Well -->
                 <div class="well">
                     <h4>برچسب های وب سایت</h4>
@@ -123,12 +124,6 @@
                                     <li><a href="showWebsites-{{ Tag.id }}">{{ Tag }}</a>
                                     </li>
                                 {% endfor %}
-                                {#                                <li><a href="#">برچسب</a>#}
-                                {#                                </li>#}
-                                {#                                <li><a href="#">برچسب</a>#}
-                                {#                                </li>#}
-                                {#                                <li><a href="#">برچسب</a>#}
-                                {#                                </li>#}
                             </ul>
                         </div>
                     </div>
@@ -142,7 +137,7 @@
             <div class="col-lg-8">
                 <img class="img-responsive2" src="{{ webcontext.Webpage_logo.url }}"
                      alt="{{ webcontext.Webpage_logo.url }}">
-                <a href="{{ webcontext.Webpage_logo.url }}">Pic</a>
+                <a href="{{ webcontext.Webpage_logo.url }}" target="_blank">نمایش کامل تصویر</a>
 
             </div>
 
@@ -160,7 +155,7 @@
                             <h3>{{ Fest.fest_title }}<br></h3>
                             <p>{{ Fest.fest_text }}</p>
                             <a class="btn btn-md btn-primary btn-block"
-                               href="{{ Fest.fest_url }}">{{ Fest.fest_title }}</a>
+                               href="{{ Fest.fest_url }}" target="_blank">{{ Fest.fest_title }}</a>
                         </div>
                     </div>
                 </div>

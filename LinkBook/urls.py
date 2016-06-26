@@ -1,7 +1,7 @@
 """LinkBook URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
+    https://docs.djangoproject.com/en/1.8/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 import django.contrib.auth.urls
@@ -32,10 +32,6 @@ from WebCastle.views import *
 
 urlpatterns = [
                   url('^', include('django.contrib.auth.urls')),
-                  # url(r'', include(frontend_urls)),
-                  # url('^change-password/', auth_views.password_change),
-                  # url(r'^web/', include('WebCastle.urls')),
-                  # url(r'^accounts/', include('allauth.urls')),
                   url(r'^admin/', admin.site.urls),
                   url(r'^web/', include('WebCastle.urls', namespace='Webcastel')),
                   url(r'^$', Index.as_view(), name='Home'),
